@@ -19,6 +19,14 @@ The main *pynput* module.
 
 This module imports ``keyboard`` and ``mouse``.
 """
+from importlib import resources
+
+try:
+    import tomllib
+except ModuleNotFoundError:
+    # Third party imports
+    import tomli as tomllib
+
 
 def _logger(cls):
     """Creates a logger with a name suitable for a specific class.
